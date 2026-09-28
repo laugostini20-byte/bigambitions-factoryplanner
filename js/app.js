@@ -592,5 +592,9 @@
     renderOrder();
   }
 
+  const meta = DATA.meta;
+  $("tagLine").textContent = `1.0 game data \xB7 ${meta.recipes} recipes`;
+  $("dataLine").textContent = `Data pulled from the Big Ambitions 1.0 game files (items, importers, recipes, equipment) on ${meta.pulled}.`;
+
   renderAll(true);
 })();

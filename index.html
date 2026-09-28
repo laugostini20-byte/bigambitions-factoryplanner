@@ -8,6 +8,10 @@
 <meta property="og:title" content="Big Ambitions Factory Planner">
 <meta property="og:description" content="Is it cheaper to make it or import it? Costs, savings and payback for all 62 factory recipes, from the 1.0 game files.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1A2227">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231A2227'/%3E%3Cpath d='M5 26V14l6 4v-4l6 4v-4l6 4V8h4v18z' fill='%23E6A23C'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +31,7 @@
 <h1>Factory <span>Line</span> Planner</h1>
 <p class="sub">Plan output, raw materials, cost and payback for every Big Ambitions factory recipe. Prices come straight from the 1.0 game files.</p>
 </div>
-<span class="tag">1.0 game data · 62 recipes</span>
+<span class="tag" id="tagLine">1.0 game data · 62 recipes</span>
 </header>
 <details class="settings" id="settings">
 <summary><span class="sumtxt"><b>Game settings</b><span id="setSum"></span></span></summary>
@@ -124,9 +128,10 @@
 </div>
 </section>
 <footer>
+<p class="links"><a href="https://github.com/laugostini20-byte/bigambitions-factoryplanner/issues/new" target="_blank" rel="noopener">Report a wrong number / suggest a feature</a> · <a href="data/BigAmbitions_Items_and_Prices.xlsx" download>Download the spreadsheet</a> · <a href="https://github.com/laugostini20-byte/bigambitions-factoryplanner" target="_blank" rel="noopener">Source on GitHub</a></p>
 <p><b>How the numbers work:</b> each staffed workstation runs its recipe once per in-game hour. Output = recipe × (skill ÷ 2 + 50)%. Materials are always the full recipe amount. Costs use base import prices × your import index. Savings = what the same units would cost from an importer, minus materials and the worker's wage.</p>
 <p><b>Machines:</b> payback assumes one full machine chain per workstation and ignores rent, input/output stations, conveyors and shelving. "Normal weekly order" is the game's per-importer order amount (maxOrderAmountPerImporter). Going over it is allowed but draws down importer stock, which can trigger shortages or higher prices. Imports deliver on Mondays. Belt travel can shave a few percent off real output.</p>
-<p>Data pulled from the Big Ambitions 1.0 game files (items, importers, recipes, equipment) on 2026-09-27. Fan-made and free. Not affiliated with Hovgaard Games.</p>
+<p><span id="dataLine">Data pulled from the Big Ambitions 1.0 game files (items, importers, recipes, equipment) on 2026-09-27.</span> Fan-made and free. Not affiliated with Hovgaard Games.</p>
 </footer>
 </div>
 

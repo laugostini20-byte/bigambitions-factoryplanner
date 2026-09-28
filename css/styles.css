@@ -976,3 +976,11 @@ footer p {
   padding: 10px 12px;
   color: var(--muted);
 }
+footer .links {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+footer a {
+  color: var(--accent);
+  text-underline-offset: 2px;
+}
