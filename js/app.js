@@ -83,22 +83,26 @@
 
   // ---------- inputs ----------
 
-  $("item").innerHTML = FAMS.map(
-    fam =>
-      `<optgroup label="${fam}">` +
-      recipes
+  const picker = createPicker($("itemPicker"), {
+    groups: FAMS.map(fam => ({
+      label: fam,
+      options: recipes
         .filter(r => r.fam === fam)
-        .sort((a, b) => a.n.localeCompare(b.n))
-        .map(r => `<option>${esc(r.n)}</option>`)
-        .join("") +
-      "</optgroup>"
-  ).join("");
+        .map(r => r.n)
+        .sort((a, b) => a.localeCompare(b)),
+    })),
+    value: S.item,
+    onChange: name => {
+      S.item = name;
+      renderAll(true);
+    },
+  });
 
   const lineKeys = ["hrs", "days", "ws"];
   const gKeys = ["skill", "wage", "pidx", "sidx", "buf"];
 
   function syncInputs() {
-    $("item").value = S.item;
+    picker.setValue(S.item);
     lineKeys.forEach(k => {
       $(k).value = S[k];
       const range = $(k + "R");
@@ -149,11 +153,6 @@
       renderAll(true);
     })
   );
-
-  $("item").addEventListener("change", e => {
-    S.item = e.target.value;
-    renderAll(true);
-  });
 
   if (window.matchMedia("(min-width:641px)").matches) $("settings").open = true;
 
