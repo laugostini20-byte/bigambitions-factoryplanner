@@ -2,7 +2,7 @@
 
 A free, fan-made calculator for the factory side of [Big Ambitions](https://store.steampowered.com/app/1331550/Big_Ambitions/): is it cheaper to make it or import it?
 
-**Live:** _coming soon_
+**Live:** https://bigambitions-factoryplanner.vercel.app
 
 Pick any of the 62 factory recipes and see:
 
