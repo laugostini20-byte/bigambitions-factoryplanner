@@ -54,14 +54,8 @@
   const S = Object.assign({ item: "Pizza", hrs: 16, days: 7, ws: 2 }, store.get("flp3-s", {}));
   if (!byName[S.item]) S.item = "Pizza";
 
-  let plan = store.get("flp3-plan", null);
-  if (!Array.isArray(plan)) {
-    plan = [
-      { item: "Pizza", hrs: 16, days: 7, ws: 2 },
-      { item: "Salad", hrs: 16, days: 7, ws: 1 },
-      { item: "Clothing (Modern Cheap Female)", hrs: 16, days: 7, ws: 1 },
-    ];
-  }
+  let plan = store.get("flp3-plan", []);
+  if (!Array.isArray(plan)) plan = [];
   plan = plan.filter(line => byName[line.item]);
 
   const RK = Object.assign({ fam: "All", key: "net", dir: -1 }, store.get("flp3-rk", {}));
