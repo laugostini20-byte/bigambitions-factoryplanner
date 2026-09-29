@@ -984,3 +984,18 @@ footer a {
   color: var(--accent);
   text-underline-offset: 2px;
 }
+
+/* Raw materials table: compact so it fits its panel without a horizontal scroll */
+@media (min-width: 641px) {
+  #mat th,
+  #mat td {
+    padding: 8px 6px;
+  }
+  #mat th {
+    white-space: normal;
+  }
+  #mat td:first-child {
+    white-space: normal;
+    min-width: 110px;
+  }
+}
