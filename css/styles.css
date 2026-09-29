@@ -991,9 +991,6 @@ footer a {
   #mat td {
     padding: 8px 6px;
   }
-  #mat th {
-    white-space: normal;
-  }
   #mat td:first-child {
     white-space: normal;
     min-width: 110px;

@@ -298,13 +298,13 @@
         `<td class="hl" data-label="Order qty">${fmt(orderQty)}</td>` +
         `<td data-label="Boxes">${fmt(boxes)} <span class="fam" style="display:inline">\xD7 ${m.box}</span></td>` +
         `<td data-label="Cost">${money(cost, 0)}</td>` +
-        `<td data-label="vs normal weekly order" class="${shareOfSupply > 1 ? "w" : ""}">${isFinite(m.cap) ? Math.round(shareOfSupply * 100) + "% of " + shortN(m.cap) : "No limit"}</td></tr>`
+        `<td data-label="vs weekly supply" class="${shareOfSupply > 1 ? "w" : ""}">${isFinite(m.cap) ? Math.round(shareOfSupply * 100) + "% of " + shortN(m.cap) : "No limit"}</td></tr>`
       );
     });
 
     const shelves = Math.ceil(boxSum / 60);
     $("mat").innerHTML =
-      "<thead><tr><th>Input</th><th>Per stn-hr</th><th>Unit price</th><th>Consumed</th><th>Order qty</th><th>Boxes</th><th>Cost</th><th>vs normal weekly order</th></tr></thead><tbody>" +
+      "<thead><tr><th>Input</th><th>Per stn-hr</th><th>Unit price</th><th>Consumed</th><th>Order qty</th><th>Boxes</th><th>Cost</th><th>vs weekly supply</th></tr></thead><tbody>" +
       rows.join("") +
       `<tr class="total"><td>Total</td><td></td><td></td><td></td><td class="hl" data-label="Order qty">${fmt(orderSum)}</td>` +
       `<td data-label="Boxes">${fmt(boxSum)}</td><td data-label="Cost">${money(costSum, 0)}</td>` +
