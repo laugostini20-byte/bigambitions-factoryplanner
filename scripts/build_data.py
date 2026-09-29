@@ -43,7 +43,9 @@ def build(xlsx_path):
         r = items[n]
         # "*" marks importers that only stock the item with the "all products" setting on
         importers = sorted(i.rstrip("*").strip() for i in split(r[3]))
-        item_data[n] = [r[4], r[5], r[8], r[10], r[13] or "", importers]
+        # Max order per importer per week; "No limit..." text means the game does not enforce it for factory inputs
+        cap = r[10] if isinstance(r[10], (int, float)) else None
+        item_data[n] = [r[4], r[5], r[8], cap, r[13] or "", importers]
 
     source = next(r[1] for r in wb["Read Me"].iter_rows(values_only=True) if r[0] == "Source")
     pulled = re.search(r"\d{4}-\d{2}-\d{2}", source).group(0)

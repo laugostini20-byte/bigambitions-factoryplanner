@@ -48,7 +48,8 @@
     const item = items[name];
     if (!item) return Infinity;
     const importerCount = Math.max(1, (item.im || []).length);
-    return (item.cap || 0) * importerCount;
+    if (item.cap == null) return Infinity; // no enforced limit
+    return item.cap * importerCount;
   }
 
   function lineCalc(line, g) {

@@ -298,7 +298,7 @@
         `<td class="hl" data-label="Order qty">${fmt(orderQty)}</td>` +
         `<td data-label="Boxes">${fmt(boxes)} <span class="fam" style="display:inline">\xD7 ${m.box}</span></td>` +
         `<td data-label="Cost">${money(cost, 0)}</td>` +
-        `<td data-label="vs normal weekly order" class="${shareOfSupply > 1 ? "w" : ""}">${isFinite(m.cap) ? Math.round(shareOfSupply * 100) + "% of " + shortN(m.cap) : "n/a"}</td></tr>`
+        `<td data-label="vs normal weekly order" class="${shareOfSupply > 1 ? "w" : ""}">${isFinite(m.cap) ? Math.round(shareOfSupply * 100) + "% of " + shortN(m.cap) : "No limit"}</td></tr>`
       );
     });
 
@@ -538,7 +538,7 @@
               `<td data-label="Boxes">${fmt(boxes)}</td>` +
               `<td data-label="Unit price">${money(input.price)}</td>` +
               `<td data-label="Cost">${money(cost, 0)}</td>` +
-              `<td data-label="vs normal weekly order" class="${share > 1 ? "w" : ""}">${Math.round(share * 100)}%</td></tr>`
+              `<td data-label="vs normal weekly order" class="${share > 1 ? "w" : ""}">${isFinite(input.cap) ? Math.round(share * 100) + "%" : "No limit"}</td></tr>`
             );
           })
           .join("");
